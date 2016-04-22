@@ -1,0 +1,75 @@
+<%
+  model = options[:model]
+  form  = options[:form]
+  name  = options[:name]
+  type  = options[:type]||:text_field
+
+  group_class_list = [ 'form-group',    options[:group_class] ]
+  label_class_list = [ 'control-label', options[:label_class] ]
+  field_class_list = [ 'input-group',   options[:field_class] ]
+  input_class_list = [ 'form-control',  options[:input_class] ]
+  error_class_list = [ 'text-danger',   options[:error_class] ]
+  group_class_list << 'has-error' if model.errors[name].present?
+
+  group_class = group_class_list.flatten.join ' '
+  label_class = label_class_list.flatten.join ' '
+  field_class = field_class_list.flatten.join ' '
+  input_class = input_class_list.flatten.join ' '
+  error_class = error_class_list.flatten.join ' '
+
+  group_data = options[:group_data]
+  field_data = options[:field_data]
+  input_data = options[:input_data]
+
+  input_prefix = options[:input_prefix]
+  input_suffix = options[:input_suffix]
+
+  label_text   = options[:label_text]
+  label_prefix = options[:label_prefix]
+  label_suffix = options[:label_suffix]
+
+  input_options = {
+      disabled:    options[:disabled],
+      class:       input_class_list,
+      placeholder: options[:placeholder],
+      readonly:    options[:readonly],
+      maxlength:   options[:maxlength],
+      required:    options[:required],
+      data:        input_data
+    }
+  input_options[:input_accept] = options[:input_accept] if options[:input_accept].present?
+
+  error_hidden = options[:error_hidden]
+%>
+
+<div class='<%= group_class %>'>
+
+  <%= form.label name, class: label_class do %><%= label_prefix %><%= label_text||model.class.human_attribute_name(name.to_sym) %><%= label_suffix %><% end %>
+
+  <% if input_prefix.present? || input_suffix.present? %>
+
+    <div class='<%= field_class %>'>
+
+      <% if input_prefix.present? %>
+        <span class='input-group-addon'><%= input_prefix %></span>
+      <% end %>
+
+      <%= form.send type, name, input_options %>
+
+      <% if input_suffix.present? %>
+        <span class='input-group-addon'><%= input_suffix %></span>
+      <% end %>
+
+    </div>
+
+  <% else %>
+
+    <%= form.send type, name, input_options %>
+
+  <% end %>
+
+  <% if model.errors[name].present? && !error_hidden %>
+    <p class='<%= error_class %>'><%= model.errors[name].first %></p>
+  <% end %>
+
+</div>
