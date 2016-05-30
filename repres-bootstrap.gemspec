@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'https://github.com/topbitdu/repres-bootstrap'
   spec.summary     = 'Repres Bootstrap Resource Presentation Engine Bootstrap资源表现引擎'
   spec.description = 'Repres (REsource PRESentation) is a series of resource presentation engines. The Bootstrap resource presentation engine includes Bootstrap-based resource presentation templates & snippets. Repres (资源表现)是一系列的资源表现引擎。Bootstrap 资源表现引擎包括基于Bootstrap的资源表现模版和片段。'
-  spec.license     = "MIT"
+  spec.license     = 'MIT'
 
   spec.files         = Dir[ '{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md' ]
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
