@@ -47,7 +47,7 @@ gem 'repres-bootstrap'
 ### Render the Script
 The Script partial includes the HTML script tags for Bootstrap and its extensions. Only the [Boot CDN](http://cdn.bootcss.com/) servers are supported.
 
-The following code snippet does not load any JavaScript library.
+The following code snippet does __not__ load any JavaScript library.
 ```erb
 <%= render partial: 'repres/bootstrap/script' %>
 ```
@@ -75,7 +75,7 @@ The following JavaScript libraries are switchable, and the version can be config
 ### Render the Style
 The Style partial includes the HTML style tags for Bootstrap and its extensions. Only the [Boot CDN](http://cdn.bootcss.com/) servers are supported.
 
-The following code snippet does not load any CSS library.
+The following code snippet does __not__ load any CSS library.
 ```erb
 <%= render partial: 'repres/bootstrap/style' %>
 ```
