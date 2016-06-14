@@ -161,5 +161,5 @@ Here are more options:
 - input_prefix: the HTML source codes of input group addon before the form control.
 - input_suffix: the HTML source codes of input group addon after the form control.
 - input_accept: The HTML 5 attribute for the file input tag.
-- input_data: The HTML 5 Data attribute for the input tag.
+- input_data:   The HTML 5 Data attribute for the input tag.
 - error_hidden: Determines whether the error message block should be shown if the field has any error.
