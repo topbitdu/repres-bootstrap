@@ -1,7 +1,7 @@
 <% options = defined?(options) ? options : nil %>
 
-<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap/#{library_version :bootstrap, '3.3.6', options}/css/bootstrap.min.css", media: 'all' if library_enabled?(:bootstrap, options) %>
-<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap/#{library_version(:'bootstrap-theme', '3.3.6', options)}/css/bootstrap-theme.min.css", media: 'all' if library_enabled?(:'bootstrap-theme', options) %>
+<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap/#{library_version :bootstrap, '3.3.7', options}/css/bootstrap.min.css", media: 'all' if library_enabled?(:bootstrap, options) %>
+<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap/#{library_version(:'bootstrap-theme', '3.3.7', options)}/css/bootstrap-theme.min.css", media: 'all' if library_enabled?(:'bootstrap-theme', options) %>
 
 <%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap-datepicker/#{library_version(:'bootstrap-datepicker', '1.6.1', options)}/css/bootstrap-datepicker.min.css", media: 'all' if library_enabled?(:'bootstrap-datepicker', options) %>
 <%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap-datetimepicker/#{library_version(:'bootstrap-datetimepicker', '4.17.37', options)}/css/bootstrap-datetimepicker.min.css", media: 'all' if library_enabled?(:'bootstrap-datetimepicker', options) %>
