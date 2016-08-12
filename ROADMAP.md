@@ -17,3 +17,7 @@
 2. Improve the Style partial to load Bootstrap Theme v3.3.7 by default
 3. Improve the Script partial to load Bootstrap v3.3.7 by default
 4. Improve the Ruby Gem Specification to support Rails v5.0
+
+## v1.0.3
+1. Improve the Script partial to load Bootstrap Date Picker v1.6.2 by default
+2. Improve the Style partial to load Bootstrap Date Picker v1.6.2 by default
