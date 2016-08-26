@@ -21,3 +21,7 @@
 ## v1.0.3
 1. Improved the Script partial to load Bootstrap Date Picker v1.6.2 by default
 2. Improved the Style partial to load Bootstrap Date Picker v1.6.2 by default
+
+## v1.1
+1. Application helper
+2. Improved the Script partial to load Bootstrap File Input v4.3.4 by default
