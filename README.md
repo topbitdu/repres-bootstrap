@@ -24,6 +24,7 @@ gem 'repres-bootstrap'
 ## Include the Helper in your Application Controller before Render the Style or Script with the helper methods
 ```ruby
 include Repres::Bootstrap::ApplicationHelper
+include Repres::Bootstrap::FormHelper
 ```
 
 
@@ -202,3 +203,10 @@ Here are more options:
 - input_accept: The HTML 5 attribute for the file input tag.
 - input_data:   The HTML 5 Data attribute for the input tag.
 - error_hidden: Determines whether the error message block should be shown if the field has any error.
+
+- disabled:    the disabled attribute of a HTML input tag.
+- maxlength:   the maxlength attribute of a HTML input tag.
+- placeholder: the placeholder attribute of a HTML input tag.
+- readonly:    the readonly attribute of a HTML input tag.
+- required:    the required attribute of a HTML input tag.
+- rows:        the rows of a HTML Text Area
