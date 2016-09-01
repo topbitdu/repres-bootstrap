@@ -30,3 +30,6 @@
 1. Form Helper
 2. Improved the Application Helper to deprecate the #bootstrap_form_field & the #bootstrap_form_select_box methods
 3. Improved the Form Field partial to support the rows attribute
+
+## v1.3
+1. Platform generator

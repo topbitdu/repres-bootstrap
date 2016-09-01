@@ -210,3 +210,43 @@ Here are more options:
 - readonly:    the readonly attribute of a HTML input tag.
 - required:    the required attribute of a HTML input tag.
 - rows:        the rows of a HTML Text Area
+
+
+
+## Generators
+
+### Platform generator
+The platform generator generates a platform with a version number. The platform name is administration in the following example.
+```shell
+rails generate repres:bootstrap:platform administration --version 4
+```
+
+This will insert the following routings into the config/routes.rb file:
+```ruby
+namespace :administration do
+  namespace :v3 do
+    resources :dashboards, only: :show
+  end
+end
+```
+
+This will create the following files:
+```shell
+app/assets/images/administration/v4/.keep
+app/assets/images/shared/.keep
+app/assets/images/administration/v4/shared/.keep
+app/assets/javascripts/administration/v4/.keep
+app/assets/javascripts/shared/.keep
+app/assets/javascripts/administration/v4/shared/.keep
+app/assets/stylesheets/administration/v4/.keep
+app/assets/stylesheets/shared/.keep
+app/assets/stylesheets/administration/v4/shared/.keep
+app/controllers/concerns/priviledge_protection.rb
+app/controllers/administration/v4/privileged_controller.rb
+app/controllers/administration/v4/dashboards_controller.rb
+app/helpers/administration/v4/application_helper.rb
+app/views/layouts/administration/v4.html.erb
+app/views/shared/.keep
+app/views/administration/v4/shared/_script.html.erb
+app/views/administration/v4/shared/_style.html.erb
+```

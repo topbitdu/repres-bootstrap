@@ -27,6 +27,9 @@
 2. Improve the Script partial to load Bootstrap File Input v4.3.4 by default
 
 ## v1.2
-1. Form Helper
+1. Form helper
 2. Improve the Application Helper to deprecate the #bootstrap_form_field & the #bootstrap_form_select_box methods
 3. Improve the Form Field partial to support the rows attribute
+
+## v1.3
+1. Platform generator

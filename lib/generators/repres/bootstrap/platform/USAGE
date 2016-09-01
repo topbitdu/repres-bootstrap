@@ -1,0 +1,35 @@
+Description:
+
+    Generate the platform scaffold for the Bootstrap framework.
+
+Example:
+
+    rails generate repres:bootstrap:platform administration --version 4
+
+    This will insert the following routing into the config/routes.rb:
+
+        namespace :administration do
+          namespace :v4 do
+            resources :dashboards, only: :show
+          end
+        end
+
+    This will create the following files:
+
+        app/assets/images/administration/v4/.keep
+        app/assets/images/shared/.keep
+        app/assets/images/administration/v4/shared/.keep
+        app/assets/javascripts/administration/v4/.keep
+        app/assets/javascripts/shared/.keep
+        app/assets/javascripts/administration/v4/shared/.keep
+        app/assets/stylesheets/administration/v4/.keep
+        app/assets/stylesheets/shared/.keep
+        app/assets/stylesheets/administration/v4/shared/.keep
+        app/controllers/concerns/priviledge_protection.rb
+        app/controllers/administration/v4/privileged_controller.rb
+        app/controllers/administration/v4/dashboards_controller.rb
+        app/helpers/administration/v4/application_helper.rb
+        app/views/layouts/administration/v4.html.erb
+        app/views/shared/.keep
+        app/views/administration/v4/shared/_script.html.erb
+        app/views/administration/v4/shared/_style.html.erb
