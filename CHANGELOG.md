@@ -33,3 +33,6 @@
 
 ## v1.3
 1. Platform generator
+
+## v1.3.1
+1. Improved the Platform generator for the directory creation

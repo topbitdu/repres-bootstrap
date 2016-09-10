@@ -26,11 +26,8 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
     @version_number = options['version'].to_i
 
     generate_asset_image
-    generate_asset_image_shared
     generate_asset_script
-    generate_asset_script_shared
     generate_asset_style
-    generate_asset_style_shared
 
     generate_concern
     generate_controller
@@ -54,63 +51,38 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
 
   # image
   #
-  #   app/assets/images/platform/version/
+  #   app/assets/images/shared/
+  #   app/assets/images/{platform}/{version}/shared
   #
   def generate_asset_image
-    copy_file '.keep', "app/assets/images/#{platform_name}/#{version_name}/.keep"
-    #empty_directory "app/assets/images/#{platform_name}/#{version_name}"
-  end
-
-  # image_shared
-  #
-  #   app/assets/images/shared/
-  #
-  def generate_asset_image_shared
-    copy_file '.keep', 'app/assets/images/shared/.keep'
-    copy_file '.keep', "app/assets/images/#{platform_name}/#{version_name}/shared/.keep"
-    #empty_directory "app/assets/images/shared"
+    empty_directory 'app/assets/images/shared'
+    empty_directory "app/assets/images/#{platform_name}"
+    empty_directory "app/assets/images/#{platform_name}/#{version_name}"
+    empty_directory "app/assets/images/#{platform_name}/#{version_name}/shared"
   end
 
   # script
   #
-  #   app/assets/javascripts/platform/version/
+  #   app/assets/javascripts/shared/
+  #   app/assets/javascripts/{platform}/{version}/shared
   #
   def generate_asset_script
-    copy_file '.keep', "app/assets/javascripts/#{platform_name}/#{version_name}/.keep"
-    #empty_directory "app/assets/javascripts/#{platform_name}/#{version_name}"
-  end
-
-  # script_shared
-  #
-  #   app/assets/javascripts/shared/
-  #   app/assets/javascripts/platform/version/shared/
-  #
-  def generate_asset_script_shared
-    copy_file '.keep', 'app/assets/javascripts/shared/.keep'
-    copy_file '.keep', "app/assets/javascripts/#{platform_name}/#{version_name}/shared/.keep"
-    #empty_directory "app/assets/javascripts/shared"
-    #empty_directory "app/assets/javascripts/#{platform_name}/#{version_name}/shared"
+    empty_directory 'app/assets/javascripts/shared'
+    empty_directory "app/assets/javascripts/#{platform_name}"
+    empty_directory "app/assets/javascripts/#{platform_name}/#{version_name}"
+    empty_directory "app/assets/javascripts/#{platform_name}/#{version_name}/shared"
   end
 
   # style
   #
-  #   app/assets/stylesheets/platform/version/
+  #   app/assets/stylesheets/shared/
+  #   app/assets/stylesheets/{platform}/{version}/shared
   #
   def generate_asset_style
-    copy_file '.keep', "app/assets/stylesheets/#{platform_name}/#{version_name}/.keep"
-    #empty_directory "app/assets/stylesheets/#{platform_name}/#{version_name}"
-  end
-
-  # style_shared
-  #
-  #   app/assets/stylesheets/shared/
-  #   app/assets/stylesheets/platform/version/shared/
-  #
-  def generate_asset_style_shared
-    copy_file '.keep', 'app/assets/stylesheets/shared/.keep'
-    copy_file '.keep', "app/assets/stylesheets/#{platform_name}/#{version_name}/shared/.keep"
-    #empty_directory "app/assets/stylesheets/shared"
-    #empty_directory "app/assets/stylesheets/#{platform_name}/#{version_name}/shared"
+    empty_directory 'app/assets/stylesheets/shared'
+    empty_directory "app/assets/stylesheets/#{platform_name}"
+    empty_directory "app/assets/stylesheets/#{platform_name}/#{version_name}"
+    empty_directory "app/assets/stylesheets/#{platform_name}/#{version_name}/shared"
   end
 
   # concern
@@ -123,40 +95,47 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
 
   # controller
   #
-  #   app/controllers/platform/version/privileged_controller.rb
-  #   app/controllers/platform/version/dashboards_controller.rb
+  #   app/controllers/{platform}/{version}/privileged_controller.rb
+  #   app/controllers/{platform}/{version}/dashboards_controller.rb
   #
   def generate_controller
+    empty_directory "app/controllers/#{platform_name}"
+    empty_directory "app/controllers/#{platform_name}/#{version_name}"
     copy_file('app/controllers/privileged_controller.rb', "app/controllers/#{platform_name}/#{version_name}/privileged_controller.rb") { |content| define_namespace content }
     copy_file('app/controllers/dashboards_controller.rb', "app/controllers/#{platform_name}/#{version_name}/dashboards_controller.rb") { |content| define_namespace content }
   end
 
   # helper
   #
-  #   app/helpers/platform/version/helper.rb
+  #   app/helpers/{platform}/{version}/application_helper.rb
   #
   def generate_helper
+    empty_directory "app/helpers/#{platform_name}"
+    empty_directory "app/helpers/#{platform_name}/#{version_name}"
     copy_file('app/helpers/platform_helper.rb', "app/helpers/#{platform_name}/#{version_name}/application_helper.rb") { |content| define_namespace content }
   end
 
   # view_shared
   #
   #   app/views/shared/
-  #   app/views/platform/version/shared/_script.html.erb
-  #   app/views/platform/version/shared/_style.html.erb
+  #   app/views/{platform}/{version}/shared/_script.html.erb
+  #   app/views/{platform}/{version}/shared/_style.html.erb
   #
   def generate_view_shared
-    #empty_directory 'app/views/shared'
-    copy_file '.keep', 'app/views/shared/.keep'
+    empty_directory 'app/views/shared'
+    empty_directory "app/views/#{platform_name}"
+    empty_directory "app/views/#{platform_name}/#{version_name}"
+    empty_directory "app/views/#{platform_name}/#{version_name}/shared"
     copy_file('app/views/shared/_script.html.erb', "app/views/#{platform_name}/#{version_name}/shared/_script.html.erb") { |content| define_namespace content }
-    copy_file('app/views/shared/_style.html.erb',  "app/views/#{platform_name}/#{version_name}/shared/_style.html.erb")  { |content| define_namespace content }
+    copy_file('app/views/shared/_style.html.erb',  "app/views/#{platform_name}/#{version_name}/shared/_style.html.erb" ) { |content| define_namespace content }
   end
 
   # view_layout
   #
-  #   app/views/layouts/platform/version.html.erb
+  #   app/views/layouts/{platform}/{version}.html.erb
   #
   def generate_view_layout
+    empty_directory "app/views/layouts/#{platform_name}"
     copy_file('app/views/layouts/platform.html.erb', "app/views/layouts/#{platform_name}/#{version_name}.html.erb") { |content| define_namespace content }
   end
 
@@ -201,14 +180,11 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
   end
 
   private :define_namespace,
-    :generate_asset_image,  :generate_asset_image_shared,
-    :generate_asset_script, :generate_asset_script_shared,
-    :generate_asset_style,  :generate_asset_style_shared,
-    :generate_concern,      :generate_controller,          :generate_helper,
-    :generate_view_layout,  :generate_view_shared,
-    :generate_route,
-    :platform_module_name,  :platform_name, :platform_version_module_name,
-    :version_module_name,   :version_name,  :version_number
+    :generate_asset_image, :generate_asset_script, :generate_asset_style,
+    :generate_concern,     :generate_controller,   :generate_helper,
+    :generate_view_layout, :generate_view_shared,  :generate_route,
+    :platform_module_name, :platform_name,         :platform_version_module_name,
+    :version_module_name,  :version_name,          :version_number
 
 end
 
