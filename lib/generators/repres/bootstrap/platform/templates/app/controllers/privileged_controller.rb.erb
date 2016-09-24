@@ -1,0 +1,9 @@
+class <%= @platform_module_name %>::<%= @version_module_name %>::PrivilegedController < ApplicationController
+
+  layout  '<%= @platform_name %>/<%= @version_name %>'
+
+  include PriviledgeProtection
+
+  helper  <%= @platform_module_name %>::<%= @version_module_name %>::PlatformHelper
+
+end

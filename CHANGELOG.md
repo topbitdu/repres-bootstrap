@@ -36,3 +36,6 @@
 
 ## v1.3.1
 1. Improved the Platform generator for the directory creation
+
+## v1.3.2
+1. Improved the Platform generator for the templates

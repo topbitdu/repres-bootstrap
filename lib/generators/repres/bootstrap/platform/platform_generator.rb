@@ -22,8 +22,7 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
     puts "class_options = #{self.class.class_options.inspect}"
 =end
 
-    @platform_name  = file_name.downcase
-    @version_number = options['version'].to_i
+    define_bindings
 
     generate_asset_image
     generate_asset_script
@@ -41,48 +40,47 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
 
   end
 
-  def define_namespace(content)
-    content.gsub! /PlatformModuleName/, platform_module_name
-    content.gsub! /VersionModuleName/,  version_module_name
-    content.gsub! /platform_name/,      platform_name
-    content.gsub! /version_name/,       version_name
-    content
+  def define_bindings
+
+    @platform_name        = file_name.downcase
+    @version_number       = options['version'].to_i
+    @platform_module_name = @platform_name.camelize
+    @version_module_name  = "V#{@version_number}"
+    @version_name         = "v#{@version_number}"
+
   end
 
   # image
   #
-  #   app/assets/images/shared/
+  #   app/assets/images/shared
   #   app/assets/images/{platform}/{version}/shared
   #
   def generate_asset_image
     empty_directory 'app/assets/images/shared'
-    empty_directory "app/assets/images/#{platform_name}"
-    empty_directory "app/assets/images/#{platform_name}/#{version_name}"
-    empty_directory "app/assets/images/#{platform_name}/#{version_name}/shared"
+    empty_directory "app/assets/images/#{@platform_name}/#{@version_name}"
+    empty_directory "app/assets/images/#{@platform_name}/#{@version_name}/shared"
   end
 
   # script
   #
-  #   app/assets/javascripts/shared/
+  #   app/assets/javascripts/shared
   #   app/assets/javascripts/{platform}/{version}/shared
   #
   def generate_asset_script
     empty_directory 'app/assets/javascripts/shared'
-    empty_directory "app/assets/javascripts/#{platform_name}"
-    empty_directory "app/assets/javascripts/#{platform_name}/#{version_name}"
-    empty_directory "app/assets/javascripts/#{platform_name}/#{version_name}/shared"
+    empty_directory "app/assets/javascripts/#{@platform_name}/#{@version_name}"
+    empty_directory "app/assets/javascripts/#{@platform_name}/#{@version_name}/shared"
   end
 
   # style
   #
-  #   app/assets/stylesheets/shared/
+  #   app/assets/stylesheets/shared
   #   app/assets/stylesheets/{platform}/{version}/shared
   #
   def generate_asset_style
     empty_directory 'app/assets/stylesheets/shared'
-    empty_directory "app/assets/stylesheets/#{platform_name}"
-    empty_directory "app/assets/stylesheets/#{platform_name}/#{version_name}"
-    empty_directory "app/assets/stylesheets/#{platform_name}/#{version_name}/shared"
+    empty_directory "app/assets/stylesheets/#{@platform_name}/#{@version_name}"
+    empty_directory "app/assets/stylesheets/#{@platform_name}/#{@version_name}/shared"
   end
 
   # concern
@@ -90,7 +88,7 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
   #   app/controllers/concerns/priviledge_protection.rb
   #
   def generate_concern
-    copy_file 'app/controllers/concerns/priviledge_protection.rb'
+    template 'app/controllers/concerns/priviledge_protection.rb.erb', 'app/controllers/concerns/priviledge_protection.rb'
   end
 
   # controller
@@ -99,35 +97,32 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
   #   app/controllers/{platform}/{version}/dashboards_controller.rb
   #
   def generate_controller
-    empty_directory "app/controllers/#{platform_name}"
-    empty_directory "app/controllers/#{platform_name}/#{version_name}"
-    copy_file('app/controllers/privileged_controller.rb', "app/controllers/#{platform_name}/#{version_name}/privileged_controller.rb") { |content| define_namespace content }
-    copy_file('app/controllers/dashboards_controller.rb', "app/controllers/#{platform_name}/#{version_name}/dashboards_controller.rb") { |content| define_namespace content }
+    empty_directory "app/controllers/#{@platform_name}/#{@version_name}"
+    template 'app/controllers/privileged_controller.rb.erb', "app/controllers/#{@platform_name}/#{@version_name}/privileged_controller.rb"
+    template 'app/controllers/dashboards_controller.rb.erb', "app/controllers/#{@platform_name}/#{@version_name}/dashboards_controller.rb"
   end
 
   # helper
   #
-  #   app/helpers/{platform}/{version}/application_helper.rb
+  #   app/helpers/{platform}/{version}/platform_helper.rb
   #
   def generate_helper
-    empty_directory "app/helpers/#{platform_name}"
-    empty_directory "app/helpers/#{platform_name}/#{version_name}"
-    copy_file('app/helpers/platform_helper.rb', "app/helpers/#{platform_name}/#{version_name}/application_helper.rb") { |content| define_namespace content }
+    empty_directory "app/helpers/#{@platform_name}/#{@version_name}"
+    template 'app/helpers/platform_helper.rb.erb', "app/helpers/#{@platform_name}/#{@version_name}/platform_helper.rb"
   end
 
   # view_shared
   #
-  #   app/views/shared/
+  #   app/views/shared
   #   app/views/{platform}/{version}/shared/_script.html.erb
   #   app/views/{platform}/{version}/shared/_style.html.erb
   #
   def generate_view_shared
     empty_directory 'app/views/shared'
-    empty_directory "app/views/#{platform_name}"
-    empty_directory "app/views/#{platform_name}/#{version_name}"
-    empty_directory "app/views/#{platform_name}/#{version_name}/shared"
-    copy_file('app/views/shared/_script.html.erb', "app/views/#{platform_name}/#{version_name}/shared/_script.html.erb") { |content| define_namespace content }
-    copy_file('app/views/shared/_style.html.erb',  "app/views/#{platform_name}/#{version_name}/shared/_style.html.erb" ) { |content| define_namespace content }
+    empty_directory "app/views/#{@platform_name}/#{@version_name}"
+    empty_directory "app/views/#{@platform_name}/#{@version_name}/shared"
+    template 'app/views/shared/_script.html.erb', "app/views/#{@platform_name}/#{@version_name}/shared/_script.html.erb"
+    template 'app/views/shared/_style.html.erb',  "app/views/#{@platform_name}/#{@version_name}/shared/_style.html.erb"
   end
 
   # view_layout
@@ -135,8 +130,7 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
   #   app/views/layouts/{platform}/{version}.html.erb
   #
   def generate_view_layout
-    empty_directory "app/views/layouts/#{platform_name}"
-    copy_file('app/views/layouts/platform.html.erb', "app/views/layouts/#{platform_name}/#{version_name}.html.erb") { |content| define_namespace content }
+    template 'app/views/layouts/platform.html.erb.erb', "app/views/layouts/#{@platform_name}/#{@version_name}.html.erb"
   end
 
   # route
@@ -144,47 +138,15 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
   #   config/routes.rb
   #
   def generate_route
-    source = File.expand_path find_in_source_paths('config/routes.rb')
-    File.open(source, 'rb') { |f| route define_namespace(f.read.to_s.strip) }
+    source  = File.expand_path find_in_source_paths('config/routes.rb.erb')
+    content = ERB.new(File.binread(source).strip, nil, '-', "@output_buffer").result instance_eval('binding')
+    route content
   end
 
-  # Administration
-  def platform_module_name
-    #@platform_name.capitalize
-    @platform_name.camelize
-  end
-
-  # administration
-  def platform_name
-    @platform_name
-  end
-
-  # Administration::V1
-  def platform_version_module_name
-    "#{platform_module_name}::#{version_module_name}"
-  end
-
-  # V1
-  def version_module_name
-    "V#{version_number}"
-  end
-
-  # v1
-  def version_name
-    "v#{version_number}"
-  end
-
-  # 1
-  def version_number
-    @version_number
-  end
-
-  private :define_namespace,
+  private :define_bindings,
     :generate_asset_image, :generate_asset_script, :generate_asset_style,
     :generate_concern,     :generate_controller,   :generate_helper,
-    :generate_view_layout, :generate_view_shared,  :generate_route,
-    :platform_module_name, :platform_name,         :platform_version_module_name,
-    :version_module_name,  :version_name,          :version_number
+    :generate_view_layout, :generate_view_shared,  :generate_route
 
 end
 
