@@ -10,12 +10,14 @@ Repres (资源表现)是一系列的资源表现引擎。Bootstrap 资源表现�
 
 
 ## Recent Update
+
 Check out the [Road Map](ROADMAP.md) to find out what's the next.
 Check out the [Change Log](CHANGELOG.md) to find out what's new.
 
 
 
 ## Usage in Gemfile
+
 ```ruby
 gem 'repres-bootstrap'
 ```
@@ -23,6 +25,7 @@ gem 'repres-bootstrap'
 
 
 ## Include the Helper in your Application Controller before Render the Style or Script with the helper methods
+
 ```ruby
 include Repres::Bootstrap::ApplicationHelper
 include Repres::Bootstrap::FormHelper
@@ -31,6 +34,7 @@ include Repres::Bootstrap::FormHelper
 
 
 ## Render the Pre-defined Partials
+
 ```erb
 <html>
 
@@ -64,9 +68,8 @@ include Repres::Bootstrap::FormHelper
 </html>
 ```
 
-
-
 ### Render the Script
+
 The Script partial includes the HTML script tags for Bootstrap and its extensions. Only the [Boot CDN](http://cdn.bootcss.com/) servers are supported.
 
 The following code snippet does __not__ load any JavaScript library.
@@ -85,8 +88,7 @@ The following code snippet loads the latest Bootstrap JavaScript library.
 
 The following code snippet loads the Bootstrap JavaScript library with the given version.
 ```erb
-<%= render partial: 'repres/bootstrap/script', locals: { options: { bootstrap: { version: '3.3.5' } } }
-%>
+<%= render partial: 'repres/bootstrap/script', locals: { options: { bootstrap: { version: '3.3.5' } } } %>
 <!-- or the following line works identically -->
 <%= bootstrap_script bootstrap: { version: '3.3.5' } %>
 ```
@@ -98,9 +100,8 @@ The following JavaScript libraries are switchable, and the version can be config
 - :'bootstrap-fileinput'
 - :'bootstrap-table'
 
-
-
 ### Render the Style
+
 The Style partial includes the HTML style tags for Bootstrap and its extensions. Only the [Boot CDN](http://cdn.bootcss.com/) servers are supported.
 
 The following code snippet does __not__ load any CSS library.
@@ -132,9 +133,8 @@ The following CSS libraries are switchable, and the version can be configurable:
 - :'bootstrap-fileinput'
 - :'bootstrap-table'
 
-
-
 ### Render the Form Field
+
 The Form Field partial includes the HTML form field tags for Rails Form Builder and Bootstrap.
 ```erb
 <%= render partial: 'repres/bootstrap/form_field',
@@ -165,9 +165,8 @@ The Form Field partial includes the HTML form field tags for Rails Form Builder 
 <%= bootstrap_form_field model: model, form: f, name: :photo, type: :file_field, input_accept: 'image/*' %>
 ```
 
-
-
 ### Render the Form Select Box
+
 The Form Select Box partial includes the HTML select tags for Rails Form Builder and Bootstrap.
 ```ruby
 <%= render partial: 'repres/bootstrap/form_select_box',
@@ -184,8 +183,6 @@ The Form Select Box partial includes the HTML select tags for Rails Form Builder
 <!-- or the following line works identically -->
 <%= bootstrap_form_select_box model: model, form: f, name: :country_id, choices: @countries.select('id, name').map { |country| [ country.name, country.id ] }, options: { prompt: '请选择国家' } %>
 ```
-
-
 
 The 4 options are required: model, form, name, and type.
 Here are more options:
@@ -217,6 +214,7 @@ Here are more options:
 ## Generators
 
 ### Platform generator
+
 The platform generator generates a platform with a version number. The platform name is administration in the following example.
 ```shell
 rails generate repres:bootstrap:platform administration --version 4
