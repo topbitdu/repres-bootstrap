@@ -42,6 +42,6 @@
 
 ## v1.4
 1. Improve the Style partial to load Bootstrap Material Design v4.0.2 by default
-2. Improve the Style partial to load Falt UI v2.3.0 by default
+2. Improve the Style partial to load Flat UI v2.3.0 by default
 3. Improve the Script partial to load Bootstrap Material Design v4.0.2 by default
 4. Improve the Script partial to load Flat UI v2.3.0 by default
