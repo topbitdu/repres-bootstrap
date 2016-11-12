@@ -2,6 +2,9 @@
 
 <%= javascript_include_tag "//cdn.bootcss.com/bootstrap/#{library_version(:bootstrap, '3.3.7', options)}/js/bootstrap.min.js" if library_enabled?(:bootstrap, options) %>
 
+<%= javascript_include_tag "//cdn.bootcss.com/bootstrap-material-design/#{library_version(:'bootstrap-material-design', '4.0.2', options)}/bootstrap-material-design.umd.min.js" if library_enabled?(:'bootstrap-material-design', options) %>
+<%= javascript_include_tag "//cdn.bootcss.com/flat-ui/#{library_version(:'flat-ui', '2.3.0', options)}/js/flat-ui.min.js" if library_enabled?(:'flat-ui', options) %>
+
 <%= javascript_include_tag "//cdn.bootcss.com/bootstrap-datepicker/#{library_version(:'bootstrap-datepicker', '1.6.2', options)}/js/bootstrap-datepicker.min.js" if library_enabled?(:'bootstrap-datepicker', options) %>
 <%= javascript_include_tag "//cdn.bootcss.com/bootstrap-datetimepicker/#{library_version(:'bootstrap-datetimepicker', '4.17.37', options)}/js/bootstrap-datetimepicker.min.js" if library_enabled?(:'bootstrap-datetimepicker', options) %>
 
