@@ -95,6 +95,8 @@ The following code snippet loads the Bootstrap JavaScript library with the given
 
 The following JavaScript libraries are switchable, and the version can be configurable:
 - :bootstrap
+- :'bootstrap-material-design'
+- :'flat-ui'
 - :'bootstrap-datepicker'
 - :'bootstrap-datetimepicker'
 - :'bootstrap-fileinput'
@@ -128,6 +130,8 @@ The following code snippet loads the Bootstrap CSS library with the given versio
 The following CSS libraries are switchable, and the version can be configurable:
 - :bootstrap
 - :'bootstrap-theme'
+- :'bootstrap-material-design'
+- :'flat-ui'
 - :'bootstrap-datepicker'
 - :'bootstrap-datetimepicker'
 - :'bootstrap-fileinput'
