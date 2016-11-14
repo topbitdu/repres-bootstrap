@@ -1,14 +1,14 @@
 <% options = defined?(options) ? options : nil %>
 
-<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap/#{library_version :bootstrap, '3.3.7', options}/css/bootstrap.min.css", media: 'all' if library_enabled?(:bootstrap, options) %>
-<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap/#{library_version(:'bootstrap-theme', '3.3.7', options)}/css/bootstrap-theme.min.css", media: 'all' if library_enabled?(:'bootstrap-theme', options) %>
+<%= stylesheet_link_tag "//#{domain_name(:bootstrap, options)}/bootstrap/#{library_version :bootstrap, '3.3.7', options}/css/bootstrap.min.css", media: 'all' if library_enabled?(:bootstrap, options) %>
+<%= stylesheet_link_tag "//#{domain_name(:'bootstrap-theme', options)}/bootstrap/#{library_version(:'bootstrap-theme', '3.3.7', options)}/css/bootstrap-theme.min.css", media: 'all' if library_enabled?(:'bootstrap-theme', options) %>
 
-<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap-material-design/#{library_version(:'bootstrap-material-design', '4.0.2', options)}/bootstrap-material-design.min.css", media: 'all' if library_enabled?(:'bootstrap-material-design', options) %>
-<%= stylesheet_link_tag "//cdn.bootcss.com/flat-ui/#{library_version(:'flat-ui', '2.3.0', options)}/css/flat-ui.min.css", media: 'all' if library_enabled?(:'flat-ui', options) %>
+<%= stylesheet_link_tag "//#{domain_name(:'bootstrap-material-design', options)}/bootstrap-material-design/#{library_version(:'bootstrap-material-design', '4.0.2', options)}/bootstrap-material-design.min.css", media: 'all' if library_enabled?(:'bootstrap-material-design', options) %>
+<%= stylesheet_link_tag "//#{domain_name(:'falt-ui', options)}/flat-ui/#{library_version(:'flat-ui', '2.3.0', options)}/css/flat-ui.min.css", media: 'all' if library_enabled?(:'flat-ui', options) %>
 
-<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap-datepicker/#{library_version(:'bootstrap-datepicker', '1.6.2', options)}/css/bootstrap-datepicker.min.css", media: 'all' if library_enabled?(:'bootstrap-datepicker', options) %>
-<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap-datetimepicker/#{library_version(:'bootstrap-datetimepicker', '4.17.37', options)}/css/bootstrap-datetimepicker.min.css", media: 'all' if library_enabled?(:'bootstrap-datetimepicker', options) %>
+<%= stylesheet_link_tag "//#{domain_name(:'bootstrap-datepicker', options)}/bootstrap-datepicker/#{library_version(:'bootstrap-datepicker', '1.6.2', options)}/css/bootstrap-datepicker.min.css", media: 'all' if library_enabled?(:'bootstrap-datepicker', options) %>
+<%= stylesheet_link_tag "//#{domain_name(:'bootstrap-datetimepicker', options)}/bootstrap-datetimepicker/#{library_version(:'bootstrap-datetimepicker', '4.17.37', options)}/css/bootstrap-datetimepicker.min.css", media: 'all' if library_enabled?(:'bootstrap-datetimepicker', options) %>
 
-<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap-table/#{library_version(:'bootstrap-table', '1.11.0', options)}/bootstrap-table.min.css", media: 'all' if library_enabled?(:'bootstrap-table', options) %>
+<%= stylesheet_link_tag "//#{domain_name(:'bootstrap-table', options)}/bootstrap-table/#{library_version(:'bootstrap-table', '1.11.0', options)}/bootstrap-table.min.css", media: 'all' if library_enabled?(:'bootstrap-table', options) %>
 
-<%= stylesheet_link_tag "//cdn.bootcss.com/bootstrap-fileinput/#{library_version(:'bootstrap-fileinput', '4.3.3', options)}/css/fileinput.min.css", media: 'all' if library_enabled?(:'bootstrap-fileinput', options) %>
+<%= stylesheet_link_tag "//#{domain_name(:'bootstrap-fileinput', options)}/bootstrap-fileinput/#{library_version(:'bootstrap-fileinput', '4.3.3', options)}/css/fileinput.min.css", media: 'all' if library_enabled?(:'bootstrap-fileinput', options) %>
