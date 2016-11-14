@@ -70,7 +70,7 @@ include Repres::Bootstrap::FormHelper
 
 ### Render the Script
 
-The Script partial includes the HTML script tags for Bootstrap and its extensions. Only the [Boot CDN](http://cdn.bootcss.com/) servers are supported.
+The Script partial includes the HTML script tags for Bootstrap and its extensions. The [Boot CDN](http://cdn.bootcss.com/) server is supported by default. However, the :cdn option could be passed in to support other CDN servers. The CDN servers must syncrhonize with [cdnjs](https://github.com/cdnjs/cdnjs).
 
 The following code snippet does __not__ load any JavaScript library.
 ```erb
@@ -88,9 +88,9 @@ The following code snippet loads the latest Bootstrap JavaScript library.
 
 The following code snippet loads the Bootstrap JavaScript library with the given version.
 ```erb
-<%= render partial: 'repres/bootstrap/script', locals: { options: { bootstrap: { version: '3.3.5' } } } %>
+<%= render partial: 'repres/bootstrap/script', locals: { options: { bootstrap: { version: '3.3.5', cdn: 'cdn.server.com' } } } %>
 <!-- or the following line works identically -->
-<%= bootstrap_script bootstrap: { version: '3.3.5' } %>
+<%= bootstrap_script bootstrap: { version: '3.3.5', cdn: 'cdn.server.com' } %>
 ```
 
 The following JavaScript libraries are switchable, and the version can be configurable:
@@ -104,7 +104,7 @@ The following JavaScript libraries are switchable, and the version can be config
 
 ### Render the Style
 
-The Style partial includes the HTML style tags for Bootstrap and its extensions. Only the [Boot CDN](http://cdn.bootcss.com/) servers are supported.
+The Style partial includes the HTML style tags for Bootstrap and its extensions. The [Boot CDN](http://cdn.bootcss.com/) server is supported by default. However, the :cdn option could be passed in to support other CDN servers. The CDN servers must syncrhonize with [cdnjs](https://github.com/cdnjs/cdnjs).
 
 The following code snippet does __not__ load any CSS library.
 ```erb
@@ -122,9 +122,9 @@ The following code snippet loads the latest Bootstrap CSS library.
 
 The following code snippet loads the Bootstrap CSS library with the given version.
 ```erb
-<%= render partial: 'repres/bootstrap/style', locals: { options: { bootstrap: { version: '3.3.5' } } } %>
+<%= render partial: 'repres/bootstrap/style', locals: { options: { bootstrap: { version: '3.3.5', cdn: 'cdn.server.com' } } } %>
 <!-- or the following line works identically -->
-<%= bootstrap_style bootstrap: { version: '3.3.5' } %>
+<%= bootstrap_style bootstrap: { version: '3.3.5', cdn: 'cdn.server.com' } %>
 ```
 
 The following CSS libraries are switchable, and the version can be configurable:
