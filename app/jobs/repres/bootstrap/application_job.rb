@@ -1,2 +1,2 @@
-class Repre::Bootstrap::ApplicationJob < ActiveJob::Base
+class Repres::Bootstrap::ApplicationJob < ActiveJob::Base
 end
