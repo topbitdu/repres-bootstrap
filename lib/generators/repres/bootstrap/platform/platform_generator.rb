@@ -1,4 +1,5 @@
 # rails generate repres:bootstrap:platform administration --version 2
+require 'rails/generators'
 
 class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
 
