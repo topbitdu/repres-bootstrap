@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    repres-bootstrap (1.5)
+    repres-bootstrap (1.5.1)
       rails (>= 4.2)
       repres-hyper_text (>= 1.2)
 
