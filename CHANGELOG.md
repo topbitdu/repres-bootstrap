@@ -50,3 +50,9 @@
 1. Improve the Ruby Gem Specification to depend on the [Repres HyperText](https://github.com/topbitdu/repres-hyper_text) v1.2 Ruby Gem
 2. Improve the Script partial to support the :cdn option
 3. Improve the Style partial to support the :cdn option
+
+## v1.5.1
+1. Improve the Application job for namespace
+2. Improve the Application mailer for namespace
+3. Improve the Application record for namespace
+4. Improve the Platform generator
