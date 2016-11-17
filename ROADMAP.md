@@ -56,3 +56,7 @@
 2. Improve the Application mailer for namespace
 3. Improve the Application record for namespace
 4. Improve the Platform generator
+
+## v1.5.2
+1. Improve the Style partial to load Bootstrap File Input v4.3.5 by default
+2. Improve the Script partial to load Bootstrap File Input v4.3.5 by default
