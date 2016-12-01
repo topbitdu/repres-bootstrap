@@ -47,7 +47,7 @@
 4. Improve the Script partial to load Flat UI v2.3.0 by default
 
 ## v1.5
-1. Improve the Ruby Gem Specification to depend on the [Repres HyperText](https://github.com/topbitdu/repres-hyper_text) v1.2 Ruby Gem
+1. Improve the Ruby Gem Specification to depend on the [repres-hyper_text](https://github.com/topbitdu/repres-hyper_text) v1.2 Ruby Gem
 2. Improve the Script partial to support the :cdn option
 3. Improve the Style partial to support the :cdn option
 
