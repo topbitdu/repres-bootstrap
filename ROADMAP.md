@@ -60,3 +60,7 @@
 ## v1.5.2
 1. Improve the Style partial to load Bootstrap File Input v4.3.5 by default
 2. Improve the Script partial to load Bootstrap File Input v4.3.5 by default
+
+## v1.6
+1. Improve the Form Field partial to support the :size option
+2. Improve the Form Field partial to support the customized field class without the .input-group class
