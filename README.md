@@ -196,7 +196,7 @@ Here are more options:
 
 - group_class: The CSS class for the form group wrapper. The .form-group class is mandatory, and can not be removed.
 - label_class: the CSS class for the HTML label tag. The .control-label class is mandatory, and can not be removed.
-- field_class: the CSS class for the wrapper of the form control. The .input-group class is mandatory, and can not be removed.
+- field_class: the CSS class for the wrapper of the form control. The .input-group class is mandatory, and can not be removed, if the input_prefix or the input_suffix is given. The .input-group class won't appear, if both of the input_prefix and the input_suffix are not given.
 - input_class: The CSS class for the HTML input tag. The .form-control class is mandatory, and can not be removed.
 - error_class: the CSS class for the validation error block of this field. The .text-danger class is mandatory, and can not be removed.
 
@@ -208,10 +208,11 @@ Here are more options:
 
 - disabled:    the disabled attribute of a HTML input tag.
 - maxlength:   the maxlength attribute of a HTML input tag.
+- size:        the size attribute of a HTML input tag.
 - placeholder: the placeholder attribute of a HTML input tag.
 - readonly:    the readonly attribute of a HTML input tag.
 - required:    the required attribute of a HTML input tag.
-- rows:        the rows of a HTML Text Area
+- rows:        the rows of a HTML Text Area.
 
 
 
