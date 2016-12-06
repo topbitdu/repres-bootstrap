@@ -64,3 +64,8 @@
 ## v1.6
 1. Improve the Form Field partial to support the :size option
 2. Improve the Form Field partial to support the customized field class without the .input-group class
+
+## v1.7
+1. Improve the Form Select Box partial to support the customized field class without the .input-group class
+2. Form Check Box partial
+3. Form Radio Box partial
