@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    repres-bootstrap (1.5.2)
+    repres-bootstrap (1.6)
       rails (>= 4.2)
       repres-hyper_text (>= 1.2)
 
@@ -61,7 +61,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
-    minitest (5.9.1)
+    minitest (5.10.1)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -101,7 +101,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    thor (0.19.1)
+    thor (0.19.4)
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
