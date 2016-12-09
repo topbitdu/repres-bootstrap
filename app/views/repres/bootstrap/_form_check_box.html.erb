@@ -1,0 +1,101 @@
+<%
+  model = options[:model]
+  form  = options[:form]
+  name  = options[:name]
+
+  group_class_list = [ 'form-group',    options[:group_class] ]
+  label_class_list = [ 'control-label', options[:label_class] ]
+  field_class_list = [ 'input-group',   options[:field_class] ]
+  input_class_list = [ 'form-control',  options[:input_class] ]
+  error_class_list = [ 'text-danger',   options[:error_class] ]
+  group_class_list << 'has-error' if model.errors[name].present?
+
+  group_class = group_class_list.flatten.join ' '
+  label_class = label_class_list.flatten.join ' '
+  field_class = field_class_list.flatten.join ' '
+  input_class = input_class_list.flatten.join ' '
+  error_class = error_class_list.flatten.join ' '
+
+  input_prefix = options[:input_prefix]
+  input_suffix = options[:input_suffix]
+
+  label_text   = options[:label_text]
+  label_prefix = options[:label_prefix]
+  label_suffix = options[:label_suffix]
+
+  input_options = {
+      class:    input_class_list,
+      disabled: options[:disabled]
+    }
+
+  error_hidden = options[:error_hidden]
+
+  choices = options[:choices]
+  flags   = options[:options]||{}
+%>
+
+<div class='<%= group_class %>'>
+
+  <%= form.label name, class: label_class do %><%= label_prefix %><%= label_text||model.class.human_attribute_name(name.to_sym) %><%= label_suffix %><% end %>
+
+  <% if input_prefix.present? || input_suffix.present? %>
+
+    <div class='<%= field_class %>'>
+
+      <% if input_prefix.present? %>
+        <span class='input-group-addon'><%= input_prefix %></span>
+      <% end %>
+
+      <%= form.hidden_field name, { name: "#{form.object_name}[#{name}][]", value: '' } %>
+      <%= form.fields_for '' do |field| %>
+        <% choices.each do |title, value| %>
+          <%= field.label name, '', for: "#{form.object_name}_#{name}_#{value.to_s.downcase}" do %>
+            <%= field.check_box name, { id: "#{form.object_name}_#{name}_#{value.to_s.downcase}", name: "#{form.object_name}[#{name}][]" }, value, nil %>
+            <%= title %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <% if input_suffix.present? %>
+        <span class='input-group-addon'><%= input_suffix %></span>
+      <% end %>
+
+    </div>
+
+  <% else %>
+
+    <% if options[:field_class].present? %>
+      <div class='<%= [ options[:field_class] ].flatten.join ' ' %>'>
+
+        <%= form.hidden_field name, { name: "#{form.object_name}[#{name}][]", value: '' } %>
+        <%= form.fields_for '' do |field| %>
+          <% choices.each do |title, value| %>
+            <%= field.label name, '', for: "#{form.object_name}_#{name}_#{value.to_s.downcase}" do %>
+              <%= field.check_box name, { id: "#{form.object_name}_#{name}_#{value.to_s.downcase}", name: "#{form.object_name}[#{name}][]" }, value, nil %>
+              <%= title %>
+            <% end %>
+          <% end %>
+        <% end %>
+
+      </div>
+    <% else %>
+
+      <%= form.hidden_field name, { name: "#{form.object_name}[#{name}][]", value: '' } %>
+      <%= form.fields_for '' do |field| %>
+        <% choices.each do |title, value| %>
+          <%= field.label name, '', for: "#{form.object_name}_#{name}_#{value.to_s.downcase}" do %>
+            <%= field.check_box name, { id: "#{form.object_name}_#{name}_#{value.to_s.downcase}", name: "#{form.object_name}[#{name}][]" }, value, nil %>
+            <%= title %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    <% end %>
+
+  <% end %>
+
+  <% if model.errors[name].present? && !error_hidden %>
+    <p class='<%= error_class %>'><%= model.errors[name].first %></p>
+  <% end %>
+
+</div>
