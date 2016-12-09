@@ -56,7 +56,13 @@
 
   <% else %>
 
-    <%= form.select name, choices, flags, input_options %>
+    <% if options[:field_class].present? %>
+      <div class='<%= [ options[:field_class] ].flatten.join ' ' %>'>
+        <%= form.select name, choices, flags, input_options %>
+      </div>
+    <% else %>
+      <%= form.select name, choices, flags, input_options %>
+    <% end %>
 
   <% end %>
 
