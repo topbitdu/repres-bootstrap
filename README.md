@@ -56,6 +56,10 @@ include Repres::Bootstrap::FormHelper
         <!-- or the following line works identically -->
         <%= bootstrap_form_select_box model: model, form: f, name: :gender, choices: { 'Male' => '1', 'Female' => '2' }, options: { include_blank: 'Please Select...' } %>
 
+        <%= render partial: 'repres/bootstrap/form_check_box', locals: { options: { model: model, form: f, name: :gender, choices: { 'Male' => '1', 'Female' => '2' }, options: {} } } %>
+
+        <%= render partial: 'repres/bootstrap/form_radio_box', locals: { options: { model: model, form: f, name: :gender, choices: { 'Male' => '1', 'Female' => '2' }, options: {} } } %>
+
       <% end %>
     </div>
 
