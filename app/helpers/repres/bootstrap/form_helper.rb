@@ -8,4 +8,12 @@ module Repres::Bootstrap::FormHelper
     render partial: 'repres/bootstrap/form_select_box', locals: { options: options }
   end
 
+  def bootstrap_form_check_box(options = {})
+    render partial: 'repres/bootstrap/form_check_box', locals: { options: options }
+  end
+
+  def bootstrap_form_radio_box(options = {})
+    render partial: 'repres/bootstrap/form_radio_box', locals: { options: options }
+  end
+
 end
