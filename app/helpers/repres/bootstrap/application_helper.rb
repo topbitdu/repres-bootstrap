@@ -1,7 +1,5 @@
 module Repres::Bootstrap::ApplicationHelper
 
-  #extend Repres::Bootstrap::FormHelper
-
   def bootstrap_form_field(options = {})
     warn 'Repres::Bootstrap::ApplicationHelper#bootstrap_form_field is deprecated and will be removed in the future, please use Repres::Bootstrap::FormHelper#bootstrap_form_field instead.'
     #super options
