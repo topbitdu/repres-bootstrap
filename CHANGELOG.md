@@ -69,3 +69,6 @@
 1. Improve the Form Select Box partial to support the customized field class without the .input-group class
 2. Form Check Box partial
 3. Form Radio Box partial
+
+## v1.8
+1. Improve the Form helper to add the #bootstrap_form_check_box method & the #bootstrap_form_radio_box method

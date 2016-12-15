@@ -192,6 +192,44 @@ The Form Select Box partial includes the HTML select tags for Rails Form Builder
 <%= bootstrap_form_select_box model: model, form: f, name: :country_id, choices: @countries.select('id, name').map { |country| [ country.name, country.id ] }, options: { prompt: '请选择国家' } %>
 ```
 
+### Render the Form Check Box
+
+The Form Check Box partial includes the HTML select tags for Rails Form Builder and Bootstrap.
+```ruby
+<%= render partial: 'repres/bootstrap/form_check_box',
+           locals: {
+             options: {
+               model:   model,
+               form:    f,
+               name:    :country_id,
+               choices: @countries.select('id, name').map { |country| [ country.name, country.id ] },
+               options: {}
+             }
+           }
+%>
+<!-- or the following line works identically -->
+<%= bootstrap_form_check_box model: model, form: f, name: :country_id, choices: @countries.select('id, name').map { |country| [ country.name, country.id ] }, options: {} %>
+```
+
+### Render the Form Radio Box
+
+The Form Check Box partial includes the HTML select tags for Rails Form Builder and Bootstrap.
+```ruby
+<%= render partial: 'repres/bootstrap/form_radio_box',
+           locals: {
+             options: {
+               model:   model,
+               form:    f,
+               name:    :country_id,
+               choices: @countries.select('id, name').map { |country| [ country.name, country.id ] },
+               options: {}
+             }
+           }
+%>
+<!-- or the following line works identically -->
+<%= bootstrap_form_radio_box model: model, form: f, name: :country_id, choices: @countries.select('id, name').map { |country| [ country.name, country.id ] }, options: {} %>
+```
+
 The 4 options are required: model, form, name, and type.
 Here are more options:
 - label_text:   The customized label text.
