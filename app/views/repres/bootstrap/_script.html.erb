@@ -17,3 +17,8 @@
   <%= javascript_include_tag "//#{domain_name(:'bootstrap-fileinput', options)}/bootstrap-fileinput/#{library_version(:'bootstrap-fileinput', '4.3.5', options)}/js/fileinput.min.js" %>
   <%= javascript_include_tag "//#{domain_name(:'bootstrap-fileinput', options)}/bootstrap-fileinput/#{library_version(:'bootstrap-fileinput', '4.3.5', options)}/js/locales/zh.min.js", charset: 'UTF-8' %>
 <% end %>
+
+<% if library_enabled?(:'jquery.bootstrapvalidator', options) %>
+  <%= javascript_include_tag "//#{domain_name(:'jquery.bootstrapvalidator', options)}/jquery.bootstrapvalidator/#{library_version(:'jquery.bootstrapvalidator', '0.5.3', options)}/js/bootstrapValidator.min.js" %>
+  <%= javascript_include_tag "//#{domain_name(:'jquery.bootstrapvalidator', options)}/jquery.bootstrapvalidator/#{library_version(:'jquery.bootstrapvalidator', '0.5.3', options)}/js/language/zh_CN.min.js", charset: 'UTF-8' %>
+<% end %>
