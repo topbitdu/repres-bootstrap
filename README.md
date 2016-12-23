@@ -105,6 +105,7 @@ The following JavaScript libraries are switchable, and the version can be config
 - :'bootstrap-datetimepicker'
 - :'bootstrap-fileinput'
 - :'bootstrap-table'
+- :'jquery.bootstrapvalidator'
 
 ### Render the Style
 
@@ -140,6 +141,7 @@ The following CSS libraries are switchable, and the version can be configurable:
 - :'bootstrap-datetimepicker'
 - :'bootstrap-fileinput'
 - :'bootstrap-table'
+- :'jquery.bootstrapvalidator'
 
 ### Render the Form Field
 

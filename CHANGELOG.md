@@ -72,3 +72,7 @@
 
 ## v1.8
 1. Improve the Form helper to add the #bootstrap_form_check_box method & the #bootstrap_form_radio_box method
+
+## v1.9
+1. Improve the Style partial to load jQuery Bootstrap Validator v0.5.3 by default
+2. Improve the Script partial to load jQuery Bootstrap Validator v0.5.3 by default
