@@ -1,3 +1,6 @@
+##
+# Application Helper 是生成适用于 Bootstrap 的 HTML 标签的视图辅助模块。
+
 module Repres::Bootstrap::ApplicationHelper
 
   def bootstrap_form_field(options = {})
