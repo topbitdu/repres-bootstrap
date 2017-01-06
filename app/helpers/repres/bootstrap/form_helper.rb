@@ -1,3 +1,6 @@
+##
+# Form Helper 是生成 Bootstrap 风格表单控件的视图辅助模块。
+
 module Repres::Bootstrap::FormHelper
 
   def bootstrap_form_field(options = {})
