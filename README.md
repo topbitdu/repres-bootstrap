@@ -1,6 +1,8 @@
 # Repres Bootstrap Bootstrap资源表现引擎
 
+[![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/gems/repres-bootstrap/frames)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
+
 [![Gem Version](https://badge.fury.io/rb/repres-bootstrap.svg)](https://badge.fury.io/rb/repres-bootstrap)
 [![Dependency Status](https://gemnasium.com/badges/github.com/topbitdu/repres-bootstrap.svg)](https://gemnasium.com/github.com/topbitdu/repres-bootstrap)
 
