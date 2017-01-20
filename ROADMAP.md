@@ -28,7 +28,7 @@
 
 ## v1.2
 1. Form helper
-2. Improve the Application Helper to deprecate the #bootstrap_form_field & the #bootstrap_form_select_box methods
+2. Improve the Application Helper to deprecate the #``bootstrap_form_field`` & the #bootstrap_form_select_box methods
 3. Improve the Form Field partial to support the rows attribute
 
 ## v1.3
