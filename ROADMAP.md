@@ -77,5 +77,10 @@
 1. Improve the Style partial to load jQuery Bootstrap Validator v0.5.3 by default
 2. Improve the Script partial to load jQuery Bootstrap Validator v0.5.3 by default
 
+## v1.10
+1. Models RSpec examples manifest
+2. Types RSpec examples manifest
+3. Validators RSpec examples manifest
+
 ## v2.0
 1. Improve the Application helper to remove the deprecated methods
