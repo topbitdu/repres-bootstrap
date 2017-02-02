@@ -300,3 +300,18 @@ app/views/shared/.keep
 app/views/administration/v4/shared/_script.html.erb
 app/views/administration/v4/shared/_style.html.erb
 ```
+
+
+
+## RSpec examples
+
+```ruby
+# spec/models/repres_spec.rb
+require 'repres/bootstrap/models_rspec'
+
+# spec/types/repres_spec.rb
+require 'repres/bootstrap/types_rspec'
+
+# spec/validators/repres_spec.rb
+require 'repres/bootstrap/validators_rspec'
+```
