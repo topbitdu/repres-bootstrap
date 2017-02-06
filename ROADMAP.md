@@ -82,5 +82,8 @@
 2. Types RSpec examples manifest
 3. Validators RSpec examples manifest
 
+## v1.10.1
+1. Improve the Ruby Gem Specification to never depend on the [rails](https://github.com/rails/rails)
+
 ## v2.0
 1. Improve the Application helper to remove the deprecated methods
