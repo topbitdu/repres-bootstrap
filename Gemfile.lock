@@ -1,9 +1,8 @@
 PATH
   remote: .
   specs:
-    repres-bootstrap (1.10)
-      rails (>= 4.2)
-      repres-hyper_text (>= 1.2)
+    repres-bootstrap (1.10.1)
+      repres-hyper_text (~> 1.2)
 
 GEM
   remote: https://rubygems.org/
