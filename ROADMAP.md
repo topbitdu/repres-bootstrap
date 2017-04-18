@@ -85,5 +85,15 @@
 ## v1.10.1
 1. Improve the Ruby Gem Specification to never depend on the [rails](https://github.com/rails/rails)
 
+## v1.10.2
+1. Improve the Style partial to load Bootstrap Date Picker v1.6.4 by default
+2. Improve the Style partial to load Bootstrap Date Time Picker v4.17.47 by default
+3. Improve the Style partial to load Bootstrap Table v1.11.1 by default
+4. Improve the Style partial to load Bootstrap File Input v4.3.8 by default
+5. Improve the Script partial to load Bootstrap Date Picker v1.6.4 by default
+6. Improve the Script partial to load Bootstrap Date Time Picker v4.17.47 by default
+7. Improve the Script partial to load Bootstrap Table v1.11.1 by default
+8. Improve the Script partial to load Bootstrap File Input v4.3.8 by default
+
 ## v2.0
 1. Improve the Application helper to remove the deprecated methods
