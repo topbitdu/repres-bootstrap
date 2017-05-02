@@ -29,8 +29,8 @@ gem 'repres-bootstrap'
 ## Include the Helper in your Application Controller before Render the Style or Script with the helper methods
 
 ```ruby
-include Repres::Bootstrap::ApplicationHelper
-include Repres::Bootstrap::FormHelper
+helper Repres::Bootstrap::ApplicationHelper
+helper Repres::Bootstrap::FormHelper
 ```
 
 
