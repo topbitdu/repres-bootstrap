@@ -274,7 +274,7 @@ rails generate repres:bootstrap:platform administration --version 4
 This will insert the following routings into the config/routes.rb file:
 ```ruby
 namespace :administration do
-  namespace :v3 do
+  namespace :v4 do
     resources :dashboards, only: :show
   end
 end
