@@ -95,5 +95,8 @@
 7. Improve the Script partial to load Bootstrap Table v1.11.1 by default
 8. Improve the Script partial to load Bootstrap File Input v4.3.8 by default
 
+## v1.11
+1. Scaffold generator
+
 ## v2.0
 1. Improve the Application helper to remove the deprecated methods
