@@ -1,0 +1,28 @@
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+  <dl>
+    <dt><%%= <%= class_name %>.human_attribute_name :<%= attribute.name %> %>:</dt>
+    <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
+  </dl>
+<% end -%>
+
+<%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'btn btn-link' do %><i class='fa fa-edit fa-lg'></i> <%%= t 'scaffold.action.edit' %><%% end %> |
+<%%= link_to <%= index_helper %>_path, class: 'btn btn-link' do %><i class='fa fa-list fa-lg'></i> <%%= t 'scaffold.action.back' %><%% end %>
+
+<%% content_for :title do %>
+  <%%= t 'scaffold.action.show' %><%%= <%= class_name %>.model_name.human %>_<%%= t 'scaffold.app.title' %>
+<%% end %>
+
+<%% content_for :meta do %>
+<%% end %>
+
+<%% content_for :style do %>
+  <%%= stylesheet_link_tag '<%= plural_table_name %>/show' %>
+  <style type="text/css">
+  </style>
+<%% end %>
+
+<%% content_for :script do %>
+  <%%= javascript_include_tag '<%= plural_table_name %>/show' %>
+  <script type="text/javascript">
+  </script>
+<%% end %>
