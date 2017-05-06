@@ -1,0 +1,19 @@
+<%%= form_for(<%= singular_table_name %>) do |f| %>
+
+  <% attributes.each do |attribute| -%>
+    <%
+      field_type = case attribute.type
+        when :string then :text_field
+        when :text   then :text_area
+        when :date   then :date_picker
+        else :text_field
+      end
+    %>
+    <%%= bootstrap_form_field model: <%= singular_table_name %>, form: f, name: :<%= attribute.name %>, type: :<%= field_type %> %>
+  <% end -%>
+
+  <div class="actions">
+    <%%= f.button type: :submit, class: 'btn btn-primary' do %><i class="fa fa-floppy-o fa-lg"></i> <%%= t 'scaffold.action.save' %><%% end %>
+  </div>
+
+<%% end %>
