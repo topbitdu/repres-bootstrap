@@ -97,6 +97,7 @@
 
 ## v1.11
 1. Scaffold generator
+2. Improve the Platform generator for the layout & the partial views
 
 ## v2.0
 1. Improve the Application helper to remove the deprecated methods
