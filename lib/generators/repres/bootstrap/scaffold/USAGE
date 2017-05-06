@@ -1,0 +1,17 @@
+Description:
+
+    Generate the UI resource scaffold for the Bootstrap framework.
+
+Example:
+
+    rails generate repres:bootstrap:scaffold role --platform administration --version 3 --model Unidom::Party::Person
+
+    This will create:
+        controller, view inside the namespace
+    The model and the migration won't be created, the Unidom models and migrations will be re-used
+
+    rails generate repres:bootstrap:scaffold role --platform administration --version 3 name:string description:text
+
+    This will create:
+        controller, view inside the namespace
+        model, migration outside the namespace
