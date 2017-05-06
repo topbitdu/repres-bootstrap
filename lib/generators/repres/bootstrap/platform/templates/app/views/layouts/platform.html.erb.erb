@@ -17,9 +17,28 @@
   <%%= csrf_meta_tags %>
 
 </head>
+
 <body>
 
-  <%%= yield %>
+  <div class="jumbotron"><div class="container"><%%= render partial: 'shared/header' %></div></div>
+  <div class="container"><%%= render partial: 'shared/navigation_bar' %></div>
+
+  <div class="container">
+
+    <aside class="col-xs-12 col-lg-3"><%%= render partial: 'shared/side_menu' %></aside>
+
+    <main class="col-xs-12 col-lg-9">
+
+      <div><%%= render partial: 'shared/alert' %></div>
+      <div class="page-header"><h1 class="page-header"><%%= params[:controller].classify.constantize.model_name.human %><%%= t "scaffold.action.#{params[:action]}" %></h1></div>
+
+      <%%= yield %>
+
+    </main>
+
+  </div>
+
+  <div class="jumbotron"><div class="container"><%%= render partial: 'shared/footer' %></div></div>
 
   <%%= hyper_text_script jquery: true, modernizr: true %>
   <%%= bootstrap_script  :bootstrap => true, :'bootstrap-datepicker' => true, :'bootstrap-fileinput' => true, :'bootstrap-table' => true, :buttons => true %>
