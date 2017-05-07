@@ -1,0 +1,17 @@
+<%% if alert.present? %>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="关闭">
+      <i class="fa fa-close"></i>
+    </button>
+    <strong>注意：</strong> <%%= alert %>
+  </div>
+<%% end %>
+
+<%% if notice.present? %>
+  <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="关闭">
+      <i class="fa fa-close"></i>
+    </button>
+    <strong>成功：</strong> <%%= notice %>
+  </div>
+<%% end %>
