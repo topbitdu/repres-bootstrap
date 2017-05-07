@@ -122,8 +122,13 @@ class Repres::Bootstrap::PlatformGenerator < Rails::Generators::NamedBase
     empty_directory 'app/views/shared'
     empty_directory "app/views/#{@platform_name}/#{@version_name}"
     empty_directory "app/views/#{@platform_name}/#{@version_name}/shared"
-    template 'app/views/shared/_script.html.erb', "app/views/#{@platform_name}/#{@version_name}/shared/_script.html.erb"
-    template 'app/views/shared/_style.html.erb',  "app/views/#{@platform_name}/#{@version_name}/shared/_style.html.erb"
+    template 'app/views/shared/_script.html.erb',         "app/views/#{@platform_name}/#{@version_name}/shared/_script.html.erb"
+    template 'app/views/shared/_style.html.erb',          "app/views/#{@platform_name}/#{@version_name}/shared/_style.html.erb"
+    template 'app/views/shared/_alert.html.erb',          "app/views/#{@platform_name}/#{@version_name}/shared/_alert.html.erb"
+    template 'app/views/shared/_header.html.erb',         "app/views/#{@platform_name}/#{@version_name}/shared/_header.html.erb"
+    template 'app/views/shared/_footer.html.erb',         "app/views/#{@platform_name}/#{@version_name}/shared/_footer.html.erb"
+    template 'app/views/shared/_navigation_bar.html.erb', "app/views/#{@platform_name}/#{@version_name}/shared/_navigation_bar.html.erb"
+    template 'app/views/shared/_side_menu.html.erb',      "app/views/#{@platform_name}/#{@version_name}/shared/_side_menu.html.erb"
   end
 
   # view_layout
