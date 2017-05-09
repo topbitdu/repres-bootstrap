@@ -94,3 +94,7 @@
 6. Improve the Script partial to load Bootstrap Date Time Picker v4.17.47 by default
 7. Improve the Script partial to load Bootstrap Table v1.11.1 by default
 8. Improve the Script partial to load Bootstrap File Input v4.3.8 by default
+
+## v1.11
+1. Scaffold generator
+2. Improve the Platform generator for the layout & the partial views
